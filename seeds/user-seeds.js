@@ -1,4 +1,4 @@
-const { User } = require('models');
+const { blogUsers } = require('models');
 const blogUsers = require('../models/blogUsers');
 
 const userSeed = [
