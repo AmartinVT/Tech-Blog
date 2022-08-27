@@ -7,30 +7,35 @@ class blogComments extends Model {};
 blogComments.init(
     {
         // Unique key for all posts
-        postID: {
+        commentID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
 
-        // Connects the postID to the userID 
-        postUserID: {
+        // Connects the commentID to the userID 
+        commentUserID: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
-                key: 'id',
+                key: 'userID',
             }
         },
 
-        // Post title
-        postTitle: {
-            type: DataTypes.TEXT,
+        // Connects comment ID to post ID
+        postID: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: 'post',
+                key: 'userID',
+            }
         },
 
-        // Post body content
-        postContents: {
+        // Comment body content
+        commentContents: {
             type: DataTypes.TEXT,
             allowNull:false,
         }
@@ -40,8 +45,8 @@ blogComments.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
+        modelName: 'comment'
     }
 );
 
-module.exports = blogPosts;
+module.exports = blogComments;
