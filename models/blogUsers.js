@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt'); // Required for password encryption
-const sequelize = require('config/connection.js');
+const sequelize = require('../config/connection.js');
 
 class blogUsers extends Model {
     // Function for password validation comparing entry to password stored in user data

@@ -1,4 +1,4 @@
-const { blogPosts } = require('models');
+const { blogPosts } = require('../models');
 const blogPosts = require('../models/blogPosts');
 
 const postSeed = [

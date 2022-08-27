@@ -1,4 +1,4 @@
-const { blogComments } = require('models');
+const { blogComments } = require('../models');
 const blogComments = require('../models/blogComments');
 
 const commentSeed = [
