@@ -7,7 +7,7 @@ class blogComments extends Model {};
 blogComments.init(
     {
         // Unique key for all posts
-        commentID: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -20,7 +20,7 @@ blogComments.init(
             allowNull: false,
             references: {
                 model: 'user',
-                key: 'userID',
+                key: 'ID',
             }
         },
 
@@ -30,7 +30,7 @@ blogComments.init(
             allowNull: false,
             references: {
                 model: 'post',
-                key: 'postID',
+                key: 'ID',
             }
         },
 

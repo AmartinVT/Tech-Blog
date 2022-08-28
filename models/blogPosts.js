@@ -7,7 +7,7 @@ class blogPosts extends Model {};
 blogPosts.init(
     {
         // Unique key for all posts
-        postID: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -19,7 +19,7 @@ blogPosts.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'userID',
+                key: 'ID',
             }
         },
 

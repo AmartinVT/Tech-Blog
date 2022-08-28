@@ -4,8 +4,8 @@ const sequelize = require('../config/connection.js');
 
 class blogUsers extends Model {
     // Function for password validation comparing entry to password stored in user data
-    blogPassCheck(userPass) {
-        return bcrypt.compareSync(userPass, this.password) //Pass or fail condition
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.userPass) //Pass or fail condition
     }
 };
 
@@ -13,7 +13,7 @@ class blogUsers extends Model {
 blogUsers.init(
     {
         // Unique key for all users
-        userID: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -44,12 +44,13 @@ blogUsers.init(
     {
         // Hook for utilizing encryption functionality of bcrypt on user password
         hooks: {
-            beforeCreate: async (userValidation) => {
-              userValidation.password = await bcrypt.hash(userValidation.password, 10);
-              return userValidation;  
+            beforeCreate: async (newUserData) => {
+              newUserData.userPass = await bcrypt.hash(newUserData.userPass, 10);
+              return newUserData;  
             },
         },
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'user'
