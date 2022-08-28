@@ -49,13 +49,11 @@ blogUsers.init(
               return userValidation;  
             },
         },
-    },
-    {
         sequelize,
         freezeTableName: true,
         underscored: true,
         modelName: 'user'
-    }
+    },
 );
 
 module.exports = blogUsers;
