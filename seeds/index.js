@@ -1,8 +1,8 @@
-const userSeed = require('../seeds/user-seeds.js');
-const postSeed = require('../seeds/post-seeds.js');
-const commentSeed = require('../seeds/comment-seeds.js');
+const userSeed = require('./user-seeds');
+const postSeed = require('./post-seeds');
+const commentSeed = require('./comment-seeds');
 
-const sequelize = require('../config/connection.js');
+const sequelize = require('../config/connection');
 
 // Function to call individual seed files
 const seedAll = async () => {
