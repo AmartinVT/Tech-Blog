@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row" id="blogPost">
+    <h2>My Posts</h2>
+    {{#if post}}
+      {{#each post as |post|}}
+          {{> dash-post-card post}}
+      {{/each}}
+    {{else}}
+      <p>Your postss will appear here.</p>
+    {{/if}}
+  </div>
+</div>
+<script src="/js/post-cards.js"></script>
+<script src="/js/edit-post.js"></script>

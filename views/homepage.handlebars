@@ -1,0 +1,8 @@
+<div class="container py-5">
+  <div class="row">
+    {{#each posts as |post|}}
+        {{> post-card post}}
+    {{/each}}
+  </div>
+</div>
+<script src="/js/post-cards.js"></script>
