@@ -15,7 +15,7 @@ blogPosts.init(
         },
 
         // Connects the postID to the userID 
-        postUserID: {
+        userID: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',

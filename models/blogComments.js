@@ -15,7 +15,7 @@ blogComments.init(
         },
 
         // Connects the commentID to the userID 
-        commentUserID: {
+        userID: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -30,7 +30,7 @@ blogComments.init(
             allowNull: false,
             references: {
                 model: 'post',
-                key: 'userID',
+                key: 'postID',
             }
         },
 
