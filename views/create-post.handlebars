@@ -1,0 +1,27 @@
+<section class="container">
+    <header class="py-5 text-center">
+        <h2>Create Post</h2>
+    </header>
+    <form id="create-form">
+        <section class="row d-flex justify-content-center">
+            <section class="col-md-4 order-md-1">
+                <h4 class="mb-3">Details</h4>
+                <div class="mb-3">
+                    <label for="post-title">Title</label>
+                    <input name="post-title" class="form-control" placeholder="Title" maxlength="255" required />
+                </div>
+                <div class="mb-3">
+                    <label for="post-content">Post Content</label>
+                    <textarea name="post-content" class="form-control" placeholder="Content" maxlength="65535"></textarea>
+                </div>
+            </section>
+            <section class="col-md-4 order-md-2">
+                <div class="mb-3 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary w-75 custom-button" id="submit-post">Submit Post</button>
+                </div>
+            </section>
+        </section>
+    </form>
+</section>
+
+<script src="/js/create-post.js"></script>

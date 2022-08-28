@@ -2,7 +2,7 @@
   <div class="row" id="blogPost">
     <h2>My Posts</h2>
     {{#if post}}
-      {{#each post as |post|}}
+      {{#each posts as |post|}}
           {{> dash-post-card post}}
       {{/each}}
     {{else}}

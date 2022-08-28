@@ -1,0 +1,25 @@
+<section class="container">
+  <header class="py-3 text-center">
+    <h2>Register</h2>
+  </header>
+  <div class="row d-flex justify-content-center">
+      <form class="form register-form col-md-4 mb-4">
+          <section class="user-input mb-3">
+              <label>Username: </label>
+              <input class="form-control" id="username-register" required />
+          </section>
+          <section class="user-input mb-3">
+              <label>Email: </label>
+              <input type="email" class="form-control" id="email-register" required />
+          </section>
+          <section class="user-input mb-3">
+              <label>Password: </label>
+              <input type="password" class="form-control" id="password-register" required minlength="8" />
+          </section>
+          <section class="user-input">
+              <button type="submit" class="btn btn-primary">Register</button>
+          </section>
+      </form>
+  </div>
+</section>
+<script src="./js/register.js"></script>
