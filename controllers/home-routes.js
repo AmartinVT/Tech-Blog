@@ -1,21 +1,21 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../models');
+const { Posts, Users, Comments } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    const postData = await Post.findAll({
+    const postData = await Posts.findAll({
         attributes: ['id', 'postTitle', 'postContents', 'userID', 'created_at'],
         include: [
             {
-                model: Comment,
+                model: Comments,
                 attributes: ['id', 'commentContents', 'userID', 'postID', 'created_at'],
                 include: [{
-                    model: User,
+                    model: Users,
                     attributes: ['userName']
                 }]
             },
             {
-                model: User,
+                model: Users,
                 attributes: ['userName']
             }
         ],
@@ -44,21 +44,21 @@ router.get('/post/:id', async (req, res) => {
   } else {
     // If the user is logged in, allow them to view the post
     try {
-      const postData = await Post.findByPk(req.params.id, {
+      const postData = await Posts.findByPk(req.params.id, {
         attributes: ['id', 'postTitle', 'postContents', 'userID', 'created_at'],
         include: [
           {
-            model: Comment,
+            model: Comments,
             attributes: ['id', 'commentContents', 'userID', 'postID', 'created_at'],
             include: [
                 {
-                    model: User,
+                    model: Users,
                     attributes: ['userName']
                 }
             ]
           },
           {
-            model: User,
+            model: Users,
             attributes: ['userName']
           }
         ],

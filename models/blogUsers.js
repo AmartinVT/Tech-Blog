@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt'); // Required for password encryption
 const sequelize = require('../config/connection.js');
 
-class blogUsers extends Model {
+class Users extends Model {
     // Function for password validation comparing entry to password stored in user data
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.userPass) //Pass or fail condition
@@ -10,7 +10,7 @@ class blogUsers extends Model {
 };
 
 // Model initialization
-blogUsers.init(
+Users.init(
     {
         // Unique key for all users
         id: {
@@ -57,4 +57,4 @@ blogUsers.init(
     },
 );
 
-module.exports = blogUsers;
+module.exports = Users;

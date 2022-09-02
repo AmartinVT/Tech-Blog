@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class blogPosts extends Model {};
+class Posts extends Model {};
 
 // Model initialization
-blogPosts.init(
+Posts.init(
     {
         // Unique key for all posts
         id: {
@@ -44,4 +44,4 @@ blogPosts.init(
     }
 );
 
-module.exports = blogPosts;
+module.exports = Posts;

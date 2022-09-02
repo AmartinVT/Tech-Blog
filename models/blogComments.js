@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class blogComments extends Model {};
+class Comments extends Model {};
 
 // Model initialization
-blogComments.init(
+Comments.init(
     {
         // Unique key for all posts
         id: {
@@ -49,4 +49,4 @@ blogComments.init(
     }
 );
 
-module.exports = blogComments;
+module.exports = Comments;
