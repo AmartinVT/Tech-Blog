@@ -86,7 +86,7 @@ This Challenge is graded based on the following criteria:
 
     * Application’s folder structure follows the Model-View-Controller paradigm.
 
-    * Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
+    * Uses the [express-handlebars](https://girt www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
 
     * Application must be deployed to Heroku.
 
