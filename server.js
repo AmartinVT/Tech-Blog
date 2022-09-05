@@ -6,7 +6,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-//const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -26,7 +26,7 @@ const sess = {
 
 app.use(session(sess));
 
-//const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', exphbs.engine);
 app.set('view engine', 'handlebars');
@@ -37,6 +37,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, "node_modules/bootstrap/dist/")));
 
 app.use(routes);
+
+hbs.handlebars.registerHelper('isContentOwnedBySessionUser', function(contentOwner, options) {
+  return (contentOwner == options.data.session_user_id) ? options.fn(this) : options.inverse(this);
+});
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
